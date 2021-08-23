@@ -12,6 +12,7 @@ type HackernewsItem = {
   itemType: string
   url: string option
   score : int
+  time: int
 }
 
 [<RequireQualifiedAccess>]
@@ -44,7 +45,9 @@ let itemDecoder : Decoder<HackernewsItem> =
     title = fields.Required.At [ "title" ] Decode.string
     itemType = fields.Required.At [ "type" ] Decode.string
     url = fields.Optional.At [ "url" ] Decode.string
-    score = fields.Required.At [ "score" ] Decode.int })
+    score = fields.Required.At [ "score" ] Decode.int
+    time = fields.Required.At [ "time" ] Decode.int 
+  })
 
 let storiesEndpoint stories =
   let fromBaseUrl = sprintf "https://hacker-news.firebaseio.com/v0/%sstories.json"
@@ -204,6 +207,10 @@ let spinner =
 
 let renderItemContent (item: HackernewsItem) =
   Html.div [
+    Html.div [
+      prop.text item.time
+    ]
+
     div [ "columns"; "is-mobile" ] [
       div [ "column"; "is-narrow" ] [
         Html.div [
@@ -249,6 +256,17 @@ let renderStoryItem (itemId: int) storyItem =
     prop.children [ renderedItem ]
   ]
 
+let sortStories (storyItems: (int * DeferredStoryItem) list) = 
+ storyItems 
+  |> List.sortByDescending (fun (id, storyItem) -> 
+      match storyItem with
+      | Resolved item -> 
+        match item with 
+          | Ok storyItem -> storyItem.time
+          | Error _ -> -1 
+      | _ -> -1
+    )
+
 let renderStories items =
   match items with
   | HasNotStartedYet -> Html.none
@@ -257,6 +275,7 @@ let renderStories items =
   | Resolved (Ok items) ->
       items
       |> Map.toList
+      |> sortStories
       |> List.map (fun (id, storyItem) -> renderStoryItem id storyItem)
       |> Html.div
 
