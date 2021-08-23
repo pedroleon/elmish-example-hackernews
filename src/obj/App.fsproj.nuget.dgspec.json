@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/pedro/Prototypes/fsharp/elmish/elmish-example-hackenews-exercises/src/App.fsproj": {}
+  },
+  "projects": {
+    "/home/pedro/Prototypes/fsharp/elmish/elmish-example-hackenews-exercises/src/App.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/pedro/Prototypes/fsharp/elmish/elmish-example-hackenews-exercises/src/App.fsproj",
+        "projectName": "App",
+        "projectPath": "/home/pedro/Prototypes/fsharp/elmish/elmish-example-hackenews-exercises/src/App.fsproj",
+        "packagesPath": "/home/pedro/.nuget/packages/",
+        "outputPath": "/home/pedro/Prototypes/fsharp/elmish/elmish-example-hackenews-exercises/src/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/pedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            },
+            "Fable.Elmish.React": {
+              "target": "Package",
+              "version": "[3.0.1, )",
+              "generatePathProperty": true
+            },
+            "Fable.SimpleHttp": {
+              "target": "Package",
+              "version": "[2.6.0, )",
+              "generatePathProperty": true
+            },
+            "Feliz": {
+              "target": "Package",
+              "version": "[1.49.0, )",
+              "generatePathProperty": true
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true,
+              "generatePathProperty": true
+            },
+            "Thoth.Json": {
+              "target": "Package",
+              "version": "[3.4.1, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/137/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
