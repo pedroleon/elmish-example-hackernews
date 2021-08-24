@@ -22,5 +22,6 @@
     <PkgFeliz Condition=" '$(PkgFeliz)' == '' ">/home/pedro/.nuget/packages/feliz/1.49.0</PkgFeliz>
     <PkgFable_SimpleHttp Condition=" '$(PkgFable_SimpleHttp)' == '' ">/home/pedro/.nuget/packages/fable.simplehttp/2.6.0</PkgFable_SimpleHttp>
     <PkgFable_Elmish_React Condition=" '$(PkgFable_Elmish_React)' == '' ">/home/pedro/.nuget/packages/fable.elmish.react/3.0.1</PkgFable_Elmish_React>
+    <PkgFable_DateFunctions Condition=" '$(PkgFable_DateFunctions)' == '' ">/home/pedro/.nuget/packages/fable.datefunctions/3.7.0</PkgFable_DateFunctions>
   </PropertyGroup>
 </Project>

@@ -5,6 +5,8 @@ open Elmish.React
 open Feliz
 open Thoth.Json
 open Fable.SimpleHttp
+open Fable.DateFunctions
+open System
 
 type HackernewsItem = {
   id: int
@@ -34,6 +36,12 @@ type Msg =
   | LoadStoryItems of AsyncOperationStatus<Result<int list, string>>
   | LoadedStoryItem of int * Result<HackernewsItem, string>
   | ChangeStories of Stories
+
+type SpanishFormatDistanceOptions() = 
+  interface IFormatDistanceOptions with 
+    member val locale = DateTime.Locales.Spanish with get, set
+    member val addSuffix = true with get, set
+    member val includeSeconds = false with get, set
 
 let init() =
   { CurrentStories = Stories.New
@@ -205,12 +213,26 @@ let spinner =
     ]
   ]
 
-let renderItemContent (item: HackernewsItem) =
-  Html.div [
-    Html.div [
-      prop.text item.time
-    ]
+let renderItemPublishedAtInWords (item: HackernewsItem) =
+  let datetime = item.time |> int64 |> DateTimeOffset.FromUnixTimeSeconds
+  let formatOptions = new SpanishFormatDistanceOptions()
+  let storyTimeDistance = datetime.FormatDistanceToNow formatOptions  
 
+  Html.div [
+    prop.style [style.color.slateGray; style.fontStyle.italic]
+    prop.children [
+      Html.span [
+        prop.text "publicado "
+      ]
+      Html.span [
+        prop.text storyTimeDistance
+      ] 
+    ]
+  ]
+
+let renderItemContent (item: HackernewsItem) =
+  
+  Html.div [
     div [ "columns"; "is-mobile" ] [
       div [ "column"; "is-narrow" ] [
         Html.div [
@@ -238,6 +260,10 @@ let renderItemContent (item: HackernewsItem) =
 
         | None ->  Html.p item.title
       ]
+    ]
+
+    Html.div [
+      renderItemPublishedAtInWords item
     ]
   ]
 

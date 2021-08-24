@@ -39,6 +39,11 @@
               "version": "[5.0.0, )",
               "generatePathProperty": true
             },
+            "Fable.DateFunctions": {
+              "target": "Package",
+              "version": "[3.7.0, )",
+              "generatePathProperty": true
+            },
             "Fable.Elmish.React": {
               "target": "Package",
               "version": "[3.0.1, )",

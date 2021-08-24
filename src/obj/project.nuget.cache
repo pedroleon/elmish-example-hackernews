@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xY6Evq9kfBGhM50jg8oXA2cq7qUVVba2uhsvuquXBGDh1Ijb1K+wy5ObIO2dIMRSthdrrIfejiPgCDgm3HY2Eg==",
+  "dgSpecHash": "YQw9jiQsJOx2dhwmkm6almqt77vXCkB/SYEId/x/SFNfccDUS2MBmPCMKf5Lc7J0ZS2MI3hlTve+FSDwWv/NNw==",
   "success": true,
   "projectFilePath": "/home/pedro/Prototypes/fsharp/elmish/elmish-example-hackenews-exercises/src/App.fsproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "/home/pedro/.nuget/packages/fable.browser.event/1.2.1/fable.browser.event.1.2.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/fable.browser.webstorage/1.0.0/fable.browser.webstorage.1.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/fable.browser.xmlhttprequest/1.1.0/fable.browser.xmlhttprequest.1.1.0.nupkg.sha512",
-    "/home/pedro/.nuget/packages/fable.core/3.1.5/fable.core.3.1.5.nupkg.sha512",
+    "/home/pedro/.nuget/packages/fable.core/3.1.6/fable.core.3.1.6.nupkg.sha512",
+    "/home/pedro/.nuget/packages/fable.datefunctions/3.7.0/fable.datefunctions.3.7.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/fable.elmish/3.0.0/fable.elmish.3.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/fable.elmish.react/3.0.1/fable.elmish.react.3.0.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/fable.react/7.4.0/fable.react.7.4.0.nupkg.sha512",

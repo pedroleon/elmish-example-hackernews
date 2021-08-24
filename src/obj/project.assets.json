@@ -82,16 +82,29 @@
           "lib/netstandard2.0/Browser.XMLHttpRequest.dll": {}
         }
       },
-      "Fable.Core/3.1.5": {
+      "Fable.Core/3.1.6": {
         "type": "package",
         "dependencies": {
-          "FSharp.Core": "4.7.0"
+          "FSharp.Core": "4.7.1"
         },
         "compile": {
           "lib/netstandard2.0/Fable.Core.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Fable.Core.dll": {}
+        }
+      },
+      "Fable.DateFunctions/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Core": "3.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.DateFunctions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.DateFunctions.dll": {}
         }
       },
       "Fable.Elmish/3.0.0": {
@@ -347,17 +360,47 @@
         "lib/netstandard2.0/Browser.XMLHttpRequest.xml"
       ]
     },
-    "Fable.Core/3.1.5": {
-      "sha512": "Mft+v0YlEr+EL6WH7iyP8H4eGPZmgnU793RNNn5Bw5wJT+DsZii+dPlJW9ubX0lDgYQTBfnyuVUJj0+5XZdiqg==",
+    "Fable.Core/3.1.6": {
+      "sha512": "w6M1F0zoLk4kTFc1Lx6x1Ft6BD3QwRe0eaLiinAqbjVkcF+iK+NiXGJO+a6q9RAF9NCg0vI48Xku7aNeqG4JVw==",
       "type": "package",
-      "path": "fable.core/3.1.5",
+      "path": "fable.core/3.1.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fable.core.3.1.5.nupkg.sha512",
+        "fable.core.3.1.6.nupkg.sha512",
         "fable.core.nuspec",
         "lib/netstandard2.0/Fable.Core.dll",
         "lib/netstandard2.0/Fable.Core.xml"
+      ]
+    },
+    "Fable.DateFunctions/3.7.0": {
+      "sha512": "qDpG57mn3tbyO6EOEWRxkyRSip8AO/qATngJ0KJq+hcPyLFenMCOh2PlRXvWZCk8PwJlQ36Qwj/kx3r+nxMSqg==",
+      "type": "package",
+      "path": "fable.datefunctions/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.datefunctions.3.7.0.nupkg.sha512",
+        "fable.datefunctions.nuspec",
+        "fable/CommonHelpers.fs",
+        "fable/DateFns.fs",
+        "fable/DayHelpers.fs",
+        "fable/Fable.DateFunctions.fsproj",
+        "fable/HourHelpers.fs",
+        "fable/IsoWeeksHelper.fs",
+        "fable/Locales.fs",
+        "fable/MillisecondHelpers.fs",
+        "fable/MinuteHelpers.fs",
+        "fable/MonthHelpers.fs",
+        "fable/QuarterHelpers.fs",
+        "fable/RangeHelpers.fs",
+        "fable/SecondHelpers.fs",
+        "fable/TimestampHelpers.fs",
+        "fable/WeekHelpers.fs",
+        "fable/WeekdayHelpers.fs",
+        "fable/YearHelpers.fs",
+        "lib/netstandard2.0/Fable.DateFunctions.dll",
+        "lib/netstandard2.0/Fable.DateFunctions.xml"
       ]
     },
     "Fable.Elmish/3.0.0": {
@@ -679,6 +722,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "FSharp.Core >= 5.0.0",
+      "Fable.DateFunctions >= 3.7.0",
       "Fable.Elmish.React >= 3.0.1",
       "Fable.SimpleHttp >= 2.6.0",
       "Feliz >= 1.49.0",
@@ -722,6 +766,11 @@
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
             "version": "[5.0.0, )",
+            "generatePathProperty": true
+          },
+          "Fable.DateFunctions": {
+            "target": "Package",
+            "version": "[3.7.0, )",
             "generatePathProperty": true
           },
           "Fable.Elmish.React": {
